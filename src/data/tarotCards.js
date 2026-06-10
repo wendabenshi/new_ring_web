@@ -4,6 +4,8 @@ export const LOVE_ENERGY_POSITIONS = [
   "Where love is leading",
 ];
 
+export const SINGLE_CARD_POSITIONS = ["The message for you today"];
+
 export function slugify(label) {
   return label
     .toLowerCase()
@@ -21,40 +23,41 @@ export function cardImageSlug(label) {
 }
 
 export function cardImageUrl(label) {
+	return "/cards/one.png";
   return `https://woomoo.app/common/tarot_cards/${cardImageSlug(label)}.webp`;
 }
 
 /** @type {{ label: string, loveMeaning: string }[]} */
 export const TAROT_CARDS = [
-  { label: "The Fool", loveMeaning: "Something new is trying to begin. Love may ask you to step forward before you feel fully ready." },
-  { label: "The Magician", loveMeaning: "You have more influence over this connection than you think. Clear intention can shift the energy." },
-  { label: "The High Priestess", loveMeaning: "Trust what you already sense beneath the surface. Not everything needs to be spoken yet." },
-  { label: "The Empress", loveMeaning: "Warmth, nurture, and openness are available. Let affection be expressed, not only imagined." },
-  { label: "The Emperor", loveMeaning: "Structure and honesty matter now. Love grows where boundaries are clear and respect is mutual." },
-  { label: "The Lovers", loveMeaning: "A meaningful choice is present. Your heart is being asked to align with what you truly value." },
-  { label: "The Chariot", loveMeaning: "Momentum is building. If you want this to move forward, your direction needs to stay steady." },
-  { label: "Strength", loveMeaning: "Gentle persistence beats force. Soft courage will take this further than pressure or fear." },
-  { label: "The Hermit", loveMeaning: "A pause for reflection may protect you. Solitude now can clarify what your heart actually wants." },
-  { label: "Wheel of Fortune", loveMeaning: "The situation is turning. What felt stuck may shift sooner than expected — stay open to timing." },
-  { label: "Justice", loveMeaning: "Balance and truth are central. What is fair — and what is honest — will guide the next step." },
-  { label: "The Hanged Man", loveMeaning: "Waiting is part of the story. A different perspective may reveal what action cannot yet." },
-  { label: "Death", loveMeaning: "An old pattern is ending to make room for something truer. Release what love has outgrown." },
-  { label: "Temperance", loveMeaning: "Patience and moderation will serve you. The right connection rarely needs to be forced." },
-  { label: "The Devil", loveMeaning: "Watch for attachment, obsession, or old loops. Name what keeps pulling you back." },
-  { label: "The Tower", loveMeaning: "A shake-up may clear illusions. Uncomfortable truth can still protect your heart long-term." },
-  { label: "The Star", loveMeaning: "Hope is not naive here. Healing and renewal are quietly becoming possible again." },
-  { label: "The Moon", loveMeaning: "Mixed signals or uncertainty may cloud things. Move slowly until feelings become clearer." },
-  { label: "The Sun", loveMeaning: "Joy, clarity, and warmth want in. This energy favors honesty, playfulness, and open-heartedness." },
-  { label: "Judgement", loveMeaning: "A wake-up call around love is arriving. Answer it with compassion, not self-judgment." },
-  { label: "The World", loveMeaning: "Completion and fulfillment are within reach. A cycle may be ready to mature into something whole." },
-  { label: "Two of Cups", loveMeaning: "Mutual attraction and emotional reciprocity are highlighted. Connection wants to be balanced." },
-  { label: "Three of Cups", loveMeaning: "Support, celebration, or friendship may shape the path. Joy grows in shared emotional space." },
-  { label: "Ace of Cups", loveMeaning: "A fresh emotional opening is possible. Be receptive without abandoning self-respect." },
-  { label: "Ten of Cups", loveMeaning: "Long-term emotional harmony is the deeper theme. Ask whether this aligns with the life you want." },
-  { label: "Two of Swords", loveMeaning: "Avoidance may be keeping you in limbo. A decision postponed is still a decision." },
-  { label: "Three of Swords", loveMeaning: "Pain or disappointment needs acknowledgment before healing can begin." },
-  { label: "Queen of Cups", loveMeaning: "Emotional depth and intuition are your strength. Lead with empathy, not self-erasure." },
-  { label: "Knight of Cups", loveMeaning: "Romantic energy is in motion — through message, invitation, or sincere emotional gesture." },
+  { label: "The Fool", loveMeaning: "Something new is trying to begin. Love may ask you to step forward before you feel fully ready.",img:"/cards/one.png" },
+  { label: "The Magician", loveMeaning: "You have more influence over this connection than you think. Clear intention can shift the energy.",img:"/cards/one.png" },
+  { label: "The High Priestess", loveMeaning: "Trust what you already sense beneath the surface. Not everything needs to be spoken yet.",img:"/cards/one.png" },
+  { label: "The Empress", loveMeaning: "Warmth, nurture, and openness are available. Let affection be expressed, not only imagined.",img:"/cards/one.png" },
+  { label: "The Emperor", loveMeaning: "Structure and honesty matter now. Love grows where boundaries are clear and respect is mutual." ,img:"/cards/one.png"},
+  { label: "The Lovers", loveMeaning: "A meaningful choice is present. Your heart is being asked to align with what you truly value." ,img:"/cards/one.png"},
+  { label: "The Chariot", loveMeaning: "Momentum is building. If you want this to move forward, your direction needs to stay steady.",img:"/cards/one.png" },
+  { label: "Strength", loveMeaning: "Gentle persistence beats force. Soft courage will take this further than pressure or fear.",img:"/cards/one.png" },
+  { label: "The Hermit", loveMeaning: "A pause for reflection may protect you. Solitude now can clarify what your heart actually wants." ,img:"/cards/one.png"},
+  { label: "Wheel of Fortune", loveMeaning: "The situation is turning. What felt stuck may shift sooner than expected — stay open to timing.",img:"/cards/one.png" },
+  { label: "Justice", loveMeaning: "Balance and truth are central. What is fair — and what is honest — will guide the next step." ,img:"/cards/one.png"},
+  { label: "The Hanged Man", loveMeaning: "Waiting is part of the story. A different perspective may reveal what action cannot yet.",img:"/cards/two.png" },
+  { label: "Death", loveMeaning: "An old pattern is ending to make room for something truer. Release what love has outgrown.",img:"/cards/two.png" },
+  { label: "Temperance", loveMeaning: "Patience and moderation will serve you. The right connection rarely needs to be forced.",img:"/cards/two.png" },
+  { label: "The Devil", loveMeaning: "Watch for attachment, obsession, or old loops. Name what keeps pulling you back.",img:"/cards/two.png" },
+  { label: "The Tower", loveMeaning: "A shake-up may clear illusions. Uncomfortable truth can still protect your heart long-term.",img:"/cards/two.png" },
+  { label: "The Star", loveMeaning: "Hope is not naive here. Healing and renewal are quietly becoming possible again.",img:"/cards/two.png" },
+  { label: "The Moon", loveMeaning: "Mixed signals or uncertainty may cloud things. Move slowly until feelings become clearer.",img:"/cards/two.png" },
+  { label: "The Sun", loveMeaning: "Joy, clarity, and warmth want in. This energy favors honesty, playfulness, and open-heartedness." ,img:"/cards/two.png"},
+  { label: "Judgement", loveMeaning: "A wake-up call around love is arriving. Answer it with compassion, not self-judgment.",img:"/cards/three.png" },
+  { label: "The World", loveMeaning: "Completion and fulfillment are within reach. A cycle may be ready to mature into something whole." ,img:"/cards/three.png"},
+  { label: "Two of Cups", loveMeaning: "Mutual attraction and emotional reciprocity are highlighted. Connection wants to be balanced." ,img:"/cards/three.png"},
+  { label: "Three of Cups", loveMeaning: "Support, celebration, or friendship may shape the path. Joy grows in shared emotional space." ,img:"/cards/three.png"},
+  { label: "Ace of Cups", loveMeaning: "A fresh emotional opening is possible. Be receptive without abandoning self-respect." ,img:"/cards/three.png"},
+  { label: "Ten of Cups", loveMeaning: "Long-term emotional harmony is the deeper theme. Ask whether this aligns with the life you want." ,img:"/cards/three.png"},
+  { label: "Two of Swords", loveMeaning: "Avoidance may be keeping you in limbo. A decision postponed is still a decision." ,img:"/cards/three.png"},
+  { label: "Three of Swords", loveMeaning: "Pain or disappointment needs acknowledgment before healing can begin.",img:"/cards/three.png" },
+  { label: "Queen of Cups", loveMeaning: "Emotional depth and intuition are your strength. Lead with empathy, not self-erasure.",img:"/cards/three.png" },
+  { label: "Knight of Cups", loveMeaning: "Romantic energy is in motion — through message, invitation, or sincere emotional gesture." ,img:"/cards/three.png"},
 ];
 
 export function getCardByLabel(label) {

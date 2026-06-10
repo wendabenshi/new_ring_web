@@ -5,7 +5,7 @@
     style="transform: translateY(-32px);"
   >
     <div
-      v-for="slot in 3"
+      v-for="slot in slotCount"
       :key="slot"
       class="slot-item flex flex-col items-center gap-1.5"
       :style="{ animationDelay: `${(slot - 1) * 80}ms` }"
@@ -52,6 +52,7 @@ import TarotCardFace from "./TarotCardFace.vue";
 const props = defineProps({
   visible: { type: Boolean, default: false },
   draw: { type: Object, default: null },
+  slotCount: { type: Number, default: 3 },
   pickedCount: { type: Number, default: 0 },
   flipped: { type: Array, default: () => [false, false, false] },
 });

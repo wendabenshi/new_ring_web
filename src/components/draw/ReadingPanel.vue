@@ -4,7 +4,7 @@
       v-if="visible"
       class="reading-panel fixed inset-0 z-[1200] overflow-y-auto bg-[#18161D]/95 backdrop-blur-md"
     >
-      <div class="mx-auto flex min-h-full w-full max-w-2xl flex-col px-5 py-24 md:px-8">
+      <div class="mx-auto flex min-h-full w-full max-w-2xl flex-col px-5 py-12 md:px-8">
         <button
           type="button"
           class="mb-8 self-start text-xs text-white/45 transition hover:text-white/75"
@@ -13,10 +13,10 @@
           ← Back to draw
         </button>
 
-        <p class="text-[10px] uppercase tracking-[0.2em] text-[#7C74E7]/80">Love Energy Reading</p>
+        <p class="text-[10px] uppercase tracking-[0.2em] text-[#7C74E7]/80">{{ readingLabel }}</p>
 
         <h2 class="mt-3 font-serif text-2xl font-normal leading-tight text-white md:text-3xl">
-          Your three-card reading
+          {{ readingTitle }}
         </h2>
 
         <p class="mt-3 text-sm italic text-white/45">“{{ question }}”</p>
@@ -59,7 +59,7 @@
             class="mt-8 inline-flex items-center justify-center self-center rounded-full bg-white px-6 py-3 text-sm font-medium text-[#18161D] transition hover:bg-white/90 active:scale-[0.98]"
             @click="$emit('close')"
           >
-            Draw again
+            {{ drawAgainLabel }}
           </button>
         </template>
       </div>
@@ -76,6 +76,9 @@ const props = defineProps({
   loading: { type: Boolean, default: false },
   question: { type: String, default: "" },
   reading: { type: String, default: "" },
+  readingLabel: { type: String, default: "Love Energy Reading" },
+  readingTitle: { type: String, default: "Your three-card reading" },
+  drawAgainLabel: { type: String, default: "Draw again" },
   slots: {
     type: Array,
     default: () => [],

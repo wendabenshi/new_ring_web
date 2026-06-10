@@ -74,7 +74,7 @@ import { onBeforeUnmount, onMounted, ref } from "vue";
 import BreathingRing from "./BreathingRing.vue";
 import CompanionText from "./CompanionText.vue";
 import StarfieldBackground from "./StarfieldBackground.vue";
-import supabase from '../supabase/index.js'
+
 const introDone = ref(false);
 const ringAwake = ref(false);
 const ringFormed = ref(false);
@@ -92,32 +92,18 @@ function onGather(active) {
 }
 
 onMounted(() => {
-	
-  schedule(()=>{
-	  supabase
-	    .from('page_tokens')
-	    .select("*").eq("id",8)
-	    .then(({ data, error }) => {
-	      if (error) {
-	        console.error('查询失败:', error)
-	      } else {
-	        console.log('查询成功:', data)
-	      }
-	    })
-
-  },100);
   schedule(() => {
     introDone.value = true;
     ringAwake.value = true;
-  }, 100);
-	
+  }, 500);
+
   schedule(() => {
     ringFormed.value = true;
-  }, 100);
+  }, 900);
 
   schedule(() => {
     textVisible.value = true;
-  }, 100);
+  }, 1400);
 });
 
 onBeforeUnmount(() => {

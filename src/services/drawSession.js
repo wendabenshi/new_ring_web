@@ -1,5 +1,6 @@
 import {
   LOVE_ENERGY_POSITIONS,
+  SINGLE_CARD_POSITIONS,
   pickDistinctCards,
   getCardByLabel,
 } from "../data/tarotCards.js";
@@ -47,5 +48,44 @@ export function simulateDraw(question) {
 export function simulateInterpret(question, draw) {
   return new Promise((resolve) => {
     window.setTimeout(() => resolve(generateReading(question, draw)), 900);
+  });
+}
+
+export function createSingleCardDraw(question) {
+  const cards = pickDistinctCards(1).map((card) => ({
+    card_name: card.label,
+  }));
+
+  return {
+    question,
+    spread_name: "Single Card",
+    position_meanings: [...SINGLE_CARD_POSITIONS],
+    cards,
+  };
+}
+
+export function generateSingleReading(question, draw) {
+  const card = resolveSlotCards(draw)[0];
+  if (!card) {
+    return "The card couldn't be read right now. Try again when you're ready.";
+  }
+
+  const intro = `You asked: “${question}”\n\nOne card stepped forward. Here is its reading for you today.`;
+  const body = `${draw.position_meanings[0]}\n${card.label}\n${card.loveMeaning}`;
+  const closing =
+    "Sit with this message for a moment. A single card rarely tells the whole story — but it can name what matters most right now.";
+
+  return [intro, body, closing].join("\n\n");
+}
+
+export function simulateSingleDraw(question) {
+  return new Promise((resolve) => {
+    window.setTimeout(() => resolve(createSingleCardDraw(question)), 450);
+  });
+}
+
+export function simulateSingleInterpret(question, draw) {
+  return new Promise((resolve) => {
+    window.setTimeout(() => resolve(generateSingleReading(question, draw)), 900);
   });
 }
