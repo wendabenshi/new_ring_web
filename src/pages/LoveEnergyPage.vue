@@ -73,6 +73,7 @@
               class="draw-collapse"
               :class="{ 'draw-collapse--closed': submitted }"
               :aria-hidden="submitted"
+			  @click="goToSelf"
             >
               <div class="overflow-hidden" style="min-height: 0;">
                 <a
@@ -109,6 +110,7 @@ import ReadingPanel from "../components/draw/ReadingPanel.vue";
 import SiteHeader from "../components/SiteHeader.vue";
 import StarfieldBackground from "../components/StarfieldBackground.vue";
 import { resolveSlotCards, simulateDraw, simulateInterpret } from "../services/drawSession.js";
+import { useRouter } from "vue-router";
 
 const question = ref("When will real love show up?");
 const submitted = ref(false);
@@ -121,6 +123,7 @@ const showReading = ref(false);
 const readingLoading = ref(false);
 const readingText = ref("");
 const toastMessage = ref("");
+const router = useRouter();
 
 const suggestionChips = [
   "Will I find love this year?",
@@ -140,6 +143,10 @@ const readingSlots = computed(() => {
 });
 
 const timers = [];
+
+function goToSelf() {
+  router.push("/draw/single-card");
+}
 
 function schedule(fn, ms) {
   timers.push(window.setTimeout(fn, ms));
